@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Lógica de Programação Javascript</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Lógica de Programação com Javascript</h1>
+
+		<script>
+
+			let jugado1 = parseInt(prompt('Jogador Um, digite um número'));
+			let jugado2 = parseInt(prompt('Jogador Dois, digite um número'));
+
+			let sorteia = parseInt(Math.random() * 2);
+
+			if(jugado1 == jugado2){
+				alert('Empate! Vocês digitaram o mesmo número.');
+			} else {
+				alert(sorteia);
+			}
+			
+			if(sorteia == 0 && jugado1 < jugado2){
+				alert('jogador 1 venceu');
+			} else if(sorteia == 0 && jugado1 > jugado2) {
+				alert('jogador 2 venceu');
+			}
+
+			if(sorteia == 1 && jugado1 > jugado2){
+				alert('jogador 1 venceu');
+			} else if(sorteia == 1 && jugado1 < jugado2) {
+				alert('jogador 2 venceu');
+			}
+
+		</script>
+	</body>
+</html>

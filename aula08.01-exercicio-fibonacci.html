@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Lógica de Programação Javascript</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Lógica de Programação com Javascript</h1>
+
+		<div id='output'></div>
+		<script>
+
+			let msg = '';
+
+			let nFibonacci = prompt('Insira um número para saber o valor na Sequência Fibonacci')
+
+			// function dizBla(n){
+			// 	let msg = '';
+			// 	while(n--){
+			// 		msg += ' bla';
+			// 	}
+			// 	return msg;
+				
+			// 	if(n > 1){
+			// 		return dizBla(--n) + ' bla';
+			// 	}
+			// 	return 'bla';
+				
+			// 	return (n > 1) ? dizBla(--n) + ' bla' : 'bla';
+
+			// }
+
+			// console.log(dizBla(2));
+			// console.log(dizBla(5));
+
+			//fibonacci
+			//1 1 2 3 5 8 13
+
+			function fibonacci(n){
+
+				let arr = [];
+
+				n1 = 0;
+				n2 = 1;
+				
+				let resultado = 0;
+
+				for(let i = 0; i < n; i++){
+					resultado = n1 + n2;
+					n1 = n2;
+					n2 = resultado;
+					arr.push(n1);
+				}
+
+				console.log(arr);
+			return arr;
+			}
+
+			msg = 'O valor Fibonacci definido na sequência ' + nFibonacci + ' é: ' + fibonacci(nFibonacci)[nFibonacci - 1];
+
+			document.querySelector('#output').innerHTML = msg;
+
+
+		</script>
+	</body>
+</html>

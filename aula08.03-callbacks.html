@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Lógica de Programação Javascript</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Lógica de Programação com Javascript</h1>
+
+		<script>
+
+			function teste1(){
+				console.log('teste1 chamado');
+			}
+
+			function teste2(p){
+				console.log('teste 2 chamando p', p)
+			}
+
+			function executa(cb){
+				console.log('executa chamado');
+
+				if(typeof cb === 'function'){
+					cb('parâmetro de callback')
+				}
+			}
+
+			// executa(teste2);
+			
+			executa(function(x){
+				console.log('função anônima', x)
+			})
+
+		</script>
+	</body>
+</html>

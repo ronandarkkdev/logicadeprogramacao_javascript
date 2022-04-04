@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Lógica de Programação Javascript</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Loteria</h1>
+		<div id='output'></div>
+
+		<script>
+
+			var sorteados = sortear();
+
+			function sortear(){
+			
+				let arr = [];
+
+				while(arr.length < 6){
+					
+					var nSorteado = Math.floor(Math.random() * 100);
+
+					if(arr.indexOf(nSorteado) === -1){
+						arr.push(nSorteado);	
+					}
+				}
+			
+			return arr;
+			}
+	
+			console.log(sorteados);
+
+		</script>
+	</body>
+</html>

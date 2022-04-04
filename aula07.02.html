@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Lógica de Programação Javascript</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Lógica de Programação com Javascript</h1>
+
+		<script>
+
+			//Sintaxe formal
+
+			var obj = new Object();
+			obj.nome = 'propriedade';
+			obj.funcao = function(){
+				console.log('eu sou um método')
+			}
+
+			console.log(obj.nome);
+			obj.funcao();
+
+			//Sintaxe literal
+
+			var obj2 = {
+				nome: 'propriedade 2';
+				funcao: function(){
+					console.log('eu sou um método do obj2');
+				}
+			}
+
+			console.log(obj2.nome);
+			obj2.funcao();
+
+			//Objetos customizados
+
+			var endereco1 = {
+				'logradouro': 'rua tal',
+				'numero': 2
+			}
+
+			var endereco2 = {
+				'logradouro': 'rua aquela',
+				'numero': 20
+			}
+
+			var endereco3 = {
+				'logradouro': 'rua essa',
+				'numero': 10
+			}
+
+			//Exemplos de funções construtoras
+			var minhaArray = new Array();
+			var hoje = new Date();
+			var obt3 = new Object();
+
+			//Nova função construtora
+			function Endereco(log, n, cep){
+				this.logradouro = log
+				this.n = n
+				this.cep = cep
+
+				this.enderecoCompleto = function(){
+					return this.logradouro + ', ' + this.n;
+				}
+			}
+
+			var endereco1 = new Endereco('rua tal', 2, '38680-000');
+			var endereco2 = new Endereco('rua aquela', 20, '38610-000');
+
+			console.log(endereco1.enderecoCompleto())
+
+		</script>
+	</body>
+</html>

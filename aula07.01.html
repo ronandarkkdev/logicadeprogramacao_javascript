@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Lógica de Programação Javascript</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Lógica de Programação com Javascript</h1>
+
+		<div id='output'></div>
+
+		<script>
+			//matriz
+			let notas = [
+				[5,6,4,3,], [2,8,5,6], [3,6,4,8], [2,8,4,9]
+			];
+
+			let msg = '';
+			
+			var somaMedias = 0;
+
+			var mediaAnual = 0;
+
+			for(var i = 0; i < notas.length; i++){
+
+				var notasPorBim = 0;
+
+				for(var j = 0; j < notas[i].length; j++){
+					notasPorBim += notas[i][j];
+				}
+				
+				var mediaPorBimestre = notasPorBim / notas[i].length;
+				
+				somaMedias += mediaPorBimestre;
+
+				msg += '<p> As notas do ' + (i + 1) + 'º bimestre são: ' + notas[i].join(', ') + '</p>' ;
+				msg += '<p> A média de notas do ' + (i + 1) + 'º bimestre é: ' + mediaPorBimestre + '</p><hr>';
+
+			}
+
+			mediaAnual = (somaMedias / notas.length).toFixed(1);
+
+			console.log(somaMedias);
+			console.log(mediaAnual);
+
+			msg += '<p><strong> A média anual de todos os bimestres é de: ' + mediaAnual + '</strong></p>';
+			document.querySelector('#output').innerHTML = msg;
+
+
+		</script>
+	</body>
+</html>

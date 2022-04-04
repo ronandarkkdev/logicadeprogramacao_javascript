@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Lógica de Programação Javascript</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Lógica de Programação com Javascript</h1>
+		<div id='output'></div>
+
+		<script>
+
+			// let cadastro = [
+			// 	{'nome': 'Ronan Chagas', 'email': 'ronan.chagas@ymail.com'}, 
+			// 	{'nome': 'Nilton José', 'email': 'nilton.nextel@gmail.com'},
+			// 	{'nome': 'Luiz Eduardo Silva', 'email': 'luiz.skarpo@gmail.com'}
+			// ];
+
+			// let msg = '';
+
+			// for(let i = 0; i < cadastro.length; i++){
+			// 	msg += '<p>Nome: ' + cadastro[i].nome + '<p>';
+			// 	msg += '<p>e-mail: ' + cadastro[i].email + '</p>';
+			// }
+
+			// document.querySelector('#output').innerHTML = msg;
+
+			let msg = '';
+
+			let user1 = new Object();
+			user1.nome = 'maria';
+			user1.email = 'maria@server.com';
+
+			let user2 = new Object();
+			user2.nome = 'jose';
+			user2.email = 'jose@server.com'
+
+			let user3 = new Object();
+			user3.nome = 'jao';
+			user3.email = 'jao@server.com'
+
+			let users = [user1, user2, user3];
+
+			let contador = 0;
+			while(users[contador]){
+				msg += users[contador].nome + ' - ' + users[contador].email + '<br>';
+				contador++;
+			}
+
+			document.querySelector('#output').innerHTML = msg;
+
+		</script>
+	</body>
+</html>

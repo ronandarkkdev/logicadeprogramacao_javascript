@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Lógica de Programação Javascript</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Lógica de Programação com Javascript</h1>
+
+		<div id='output'></div>
+
+		<script>
+
+			let produtos = [
+				{'nome': 'Caneta', 'preco': 2, 'estoque': 200},
+				{'nome': 'Lápis', 'preco': 1.2, 'estoque': 300},
+				{'nome': 'Borracha', 'preco': 0.5, 'estoque': 150}
+			];
+
+			let msg = '';
+
+			produtos.comprar = function(){
+				console.log('comprou caneta');
+				this.estoque--;
+				console.log(this.estoque);
+			}
+
+
+
+			document.querySelector('#output').innerHTML = msg;
+
+		</script>
+	</body>
+</html>

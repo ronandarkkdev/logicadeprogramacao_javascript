@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Lógica de Programação Javascript</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Jogo do Par ou Ímpar</h1>
+		<p>Escolha:<br><br>
+		<label><input type='radio' name='opcao' value='par' checked>Par</label>
+		<label><input type='radio' name='opcao' value='impar'>Impar</label><br><br>
+		Digite um número entre 0 e 5:
+		<input type='number' id='meuNumero' min='0' max='5'></p>
+		<button onclick='jogar()'>Jogar</button>
+
+		<script>
+
+			let minhaEscolha = '';
+
+			function sortear(max){
+				return Math.floor(Math.random() * max);
+			}
+
+			function jogar(){
+				let nComputador = sortear(5);
+				let nJogador = parseInt(document.querySelector('#meuNumero').value);
+				minhaEscolha = document.querySelector('input[type="radio"]:checked').value;
+				console.log('minhaEscolha', minhaEscolha)
+				
+				if(nJogador == null || nJogador == undefined){
+					return alert('Insira um número antes de jogar!');	
+				}
+				
+				if(nJogador > 5 || nJogador < 0){
+					return alert('Seu número deve ser entre 0 e 5')
+				}
+
+				let total = nComputador + nJogador
+
+				let resultado = (total % 2 == 0) ? 'par' : 'impar';
+
+				console.log('nComputador', nComputador);
+				console.log('nJogador', nJogador);
+				
+				verificaResultado(resultado);
+			}
+
+			function verificaResultado(resultado){
+				if(resultado === minhaEscolha){
+					alert('Você ganhou!');
+				} else {
+					alert('Você perdeu!')
+				}
+			}
+
+		</script>
+	</body>
+</html>

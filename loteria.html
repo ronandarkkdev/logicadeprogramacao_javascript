@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Lógica de Programação Javascript</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Loteria</h1>
+
+		<button onclick="confereNumeros()">Confere Resultado</button>
+
+		<div id='output'></div>
+
+
+		<script>
+
+			let meusNumeros = insereNumeros();
+
+			let output = document.querySelector('#output');
+			
+			let msg = '';
+
+			let sorteados = sortear();
+
+			msg += '<p>Números sorteados são: </p>'
+			msg += '<p> ' + sorteados.join(', ') + ' </p>';
+
+			output.innerHTML = msg;
+
+			function confereNumeros(){
+
+				for(let i = 0; i < meusNumeros.length; i++){
+					msg += '<p>' + meusNumeros[i] + ': ';
+					msg += (sorteados.indexOf(meusNumeros[i]) === -1) ? ' Errou!' : ' Acertou!';
+					msg += '</p>'
+				}
+			
+			output.innerHTML = msg;
+			
+			}
+
+			function insereNumeros(){
+
+				let aposta = [];
+				let numeros = 1;
+
+				while(numeros < 7){
+					
+					let chute = prompt('Digite o ' + numeros + 'º número entre 1 e 100:');
+					
+					if(aposta.indexOf(chute) !== -1 ){
+						alert('O número ' + chute + ' já foi usado nesta aposta, escolha outro por favor')
+					} else if(chute == null || chute === '' || isNaN(chute)) {
+						alert('Insira um número válido');
+					} else {
+						aposta.push(parseFloat(chute));
+						numeros++;
+					}
+				}
+			return aposta;
+
+			}
+
+			function sortear(){
+			
+				let arr = [];
+
+				while(arr.length < 6){
+					
+					let nSorteado = Math.floor(Math.random() * 100);
+
+					if(arr.indexOf(nSorteado) === -1){
+						arr.push(nSorteado);	
+					}
+				}
+			
+			return arr;
+			}
+
+		</script>
+	</body>
+</html>

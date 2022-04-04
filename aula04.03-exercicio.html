@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Lógica de Programação Javascript</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Lógica de Programação com Javascript</h1>
+
+		<button onclick="iniciarCalculo('+')"> + </button>
+		<button onclick="iniciarCalculo('-')"> - </button>
+		<button onclick="iniciarCalculo('*')"> * </button>
+		<button onclick="iniciarCalculo('/')"> / </button>
+
+		<div id="output"></div>
+		
+		<script>
+
+			let numero = prompt('Digite um número:');
+
+			escreve(numero);
+
+			function iniciarCalculo(simbolo){
+				
+				let n1 = parseFloat(document.querySelector('#output').textContent);
+
+				let n2 = parseFloat(prompt('Digite outro número'));
+
+				let resultado = calcular(simbolo, n1, n2);
+
+				escreve(resultado);
+			}
+
+			function escreve(mensagem){
+				let output = document.querySelector('#output').innerHTML = mensagem;
+			}
+
+			function calcular(s, n1, n2){
+
+				let numeroCalculado;
+
+				switch(s){
+					case '+':
+					numeroCalculado = n1 + n2;
+					break;
+					case '-':
+					numeroCalculado = n1 - n2;
+					break;
+					case '*':
+					numeroCalculado = n1 * n2;
+					break;
+					case '/':
+					numeroCalculado = n1 / n2;
+				}
+			
+				return numeroCalculado;
+			}
+
+		</script>
+	</body>
+</html>

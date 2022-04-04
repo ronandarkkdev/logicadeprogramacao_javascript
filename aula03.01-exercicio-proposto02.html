@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Lógica de Programação Javascript</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Lógica de Programação com Javascript</h1>
+
+		<script>
+
+			let anoInicial = 1004
+
+			while(anoInicial <= 2022){
+				if(!(anoInicial % 100 === 0) || (anoInicial % 400 === 0)){
+					document.write(anoInicial + '<br>');
+				} else {
+					document.write(anoInicial + ' Não é bissexto <br>');
+				}
+				anoInicial += 4;
+			}
+
+		</script>
+	</body>
+</html>

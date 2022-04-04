@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Logica de Programação Javascript</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Lógica de programação com Javascript</h1>
+        
+        <div id="output"></div>
+    </body>
+    
+    <script>
+        
+        var msg = "";
+        
+       //  var alunos = [
+       //     {nome: 'daniel', id: 112233, endereco: 'rua faz de conta 2, ap 3, são paulo SP'},
+       //     {nome: 'josé', id: 112244, endereco: 'rua belezura 5, Sao paulo'},
+       //     {nome: 'joão', id: 113344, endereco: 'rua belezura 20, Sao Paulo - perto do josé'},
+       //     {nome: 'maria', id: 114444, endereco: 'rua chuchu 1, RJ'},
+       //     {nome: 'ana', id: 114555, endereco: 'Av belezura 41,  SP'}
+       // ];
+        
+        function Endereco(dados){
+            this.logradouro = dados.logradouro || '';
+            this.numero = dados.numero || 0;
+            this.complemento = dados.complemento;
+            this.cidade = dados.cidade;
+            this.cep = dados.cep;
+        }
+
+        var alunos = [
+           {nome: 'daniel', id: 112233, endereco: new Endereco({logradouro: 'rua faz de conta', numero: 2, complemento: 'ap 3', cidade: 'São Paulo', estado: 'SP', cep: '11111-111'})},
+           {nome: 'josé', id: 112244, endereco: new Endereco({logradouro: 'rua belezura', numero: 5, cidade: 'São Paulo', cep: '2222-222'})},
+           {nome: 'joão', id: 113344, endereco: new Endereco({logradouro: 'rua belezura', numero: 20, cidade: 'São Paulo', cep: '2222-222'}) },
+           {nome: 'maria', id: 114444, endereco: new Endereco({logradouro: 'rua chuchu', numero: 1, estado: 'RJ', cep: '2333-122'})},
+           {nome: 'ana', id: 114555, endereco: new Endereco({logradouro: 'Av belezura 41', numero: 41, estado: 'SP', cep: '3333-333'})}
+        ];
+        
+        var enderecos = [];
+
+        for(let i = 0; i < alunos.length; i++){
+            enderecos.push(alunos[i].endereco);
+        }
+
+        enderecos[0].estado = 'SP';
+        enderecos[1].estado = 'SP';
+        enderecos[2].estado = 'SP';
+        enderecos[3].cidade = 'Rio de Janeiro';
+        enderecos[3].estado = 'RJ';
+        enderecos[4].cidade = 'São Paulo';
+        enderecos[4].estado = 'SP';
+
+        
+        // for(let i = 0; i < alunos.length; i++){
+        //     enderecos[i] = alunos[i].endereco;
+        // }
+
+        for(let i = 0; i < enderecos.length; i++){
+            
+            let endereco = enderecos[i]
+
+            for(prop in endereco){
+
+                if(endereco[prop]){
+                  console.log(endereco[prop]);
+                  msg += 'i = ' + i + ': ' + prop + ': ' + endereco[prop] + '<br>'
+                } 
+            }
+
+            msg += '<hr>'
+        }
+
+        document.querySelector('#output').innerHTML = msg;
+        
+        
+    </script>
+</html>
